@@ -12,7 +12,7 @@ public static boolean isValidSkin(String skin){
 }
 
 //API関連
-public static boolean isValidSkin(Player player){
+public static boolean nameboolean(Player player){
 	if(player.getName().length() >= 2){
 		return true;
 		
