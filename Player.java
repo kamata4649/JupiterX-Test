@@ -6,7 +6,17 @@
 	public int SPECTATOR = 3;
 	public int VIEW = SPECTATOR;
 
-//Skin boolean
+//スキンが正しいものか true or false
 public static boolean isValidSkin(String skin){
 	return skin.length() == 64 * 64 * 4  || skin.length() == 64 * 32 * 4;
+}
+
+//API関連
+public static boolean isValidSkin(Player player){
+	if(player.getName().length() >= 2){
+		return true;
+		
+	}else{
+		return false;
+	}
 }
