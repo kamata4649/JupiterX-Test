@@ -13,12 +13,22 @@ public static boolean isValidSkin(String skin){
 
 //API関連
 //名前が2文字以上は trueを返す
-public static boolean nameboolean(Player player){
-	if(player.getName().length() >= 2){
+public static boolean nameboolean(){
+	if(this.getName().length() >= 2){
 		return true;
 	}else{
 		return false;
 	}
 }
 
+//Skinの取り出しを高速化させる。Skinをキャッシュさせ、CPU負荷を下げる
+ConcurrentHashMap<String, Skin> skin = new ConcurrentHashMap<String, Skin>();
+public static Skin skincache(Skin skin){
+if(!skin.containsKey(this.getName())){
+	skin.put(this.getSkin());
+	return this.getSkin();
+}else{
+	return skin.get(this.getName());
+}
+}
 
