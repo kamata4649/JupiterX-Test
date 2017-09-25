@@ -22,6 +22,7 @@ public static boolean nameboolean(){
 }
 
 //Skinの取り出しを高速化させる。Skinをキャッシュさせ、CPU負荷を下げる
+//正常に動作しません
 ConcurrentHashMap<String, Skin> skin = new ConcurrentHashMap<String, Skin>();
 public static Skin skincache(Skin skin){
 if(!skin.containsKey(this.getName())){
@@ -31,4 +32,6 @@ if(!skin.containsKey(this.getName())){
 	return skin.get(this.getName());
 }
 }
+
+
 
